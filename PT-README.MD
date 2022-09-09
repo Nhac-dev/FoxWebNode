@@ -15,7 +15,7 @@ FoxWeb é um script JS que visa tornar o JS mais fácil. Pode ser usado tanto no
 
 - No NodeJs
 ```
-$ npm i @jeff_dev_it/foxweb
+$ npm i foxweb-node
 ```
 ```
 * * Arquivo index.js

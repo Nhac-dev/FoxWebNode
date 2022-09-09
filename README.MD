@@ -15,52 +15,19 @@ FoxWeb is a JS script that aims to make JS easier. It can be used on both fronte
 
 - On NodeJs
 ```
-$ cd ./my_projects
-$ git clone https://github.com/Nhac-dev/FoxWeb
+$ npm i foxweb-node
 ``` 
-* * On package.json 
-```
-{
-    ...
-    "type": "module",
-    ...
-}
-```
+
 * * On index.js 
+
 ```
-import FoxModule from "./FoxWeb/sources/JS/FoxWeb.js"
-...
-```
-If you want to use commonjs mode do:
-```
-$ cd ./my_projects
-$ git clone https://github.com/Nhac-dev/FoxWeb
-$ cd ./FoxWeb
-``` 
-Open the tsconfig.json and edit:
-```
-{
-    ...
-    "module": "CommonJS",
-    ...
-}
-```
-And run the 
-```
-$ tsc
-```
-* * On index.js 
-```
+import FoxModule from "./FoxWeb/sources/JS/FoxWeb.js" // Module 
+// Or
 const FoxModule = require("./FoxWeb/sources/JS/FoxWeb.js");
 
 ...
 ```
 
-* * On Deno JS
-```
-import FoxModule from "https://cdn.jsdelivr.net/gh/Nhac-dev/FoxWeb@latest/sources/JS/FoxWeb.js"
-...
-```
 ## Understanding FoxWeb
 
 ### Return objects
