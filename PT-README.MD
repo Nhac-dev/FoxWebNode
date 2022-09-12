@@ -1,23 +1,15 @@
 # Fox Web - Um encurtador de JavaScript
 
-## Qual é?
+## O que é?
 
 FoxWeb é um script JS que visa tornar o JS mais fácil. Pode ser usado tanto no front-end quanto no back-end.
-
-- No navegador
-```
-<script type="módulo">
-    import FoxModule from "https://cdn.jsdelivr.net/gh/Nhac-dev/FoxWeb@latest/sources/JS/FoxWeb.js"
-
-    ...
-</script>
-```
 
 - No NodeJs
 ```
 $ npm i foxweb-node
 ```
-```
+
+
 * * Arquivo index.js
 ```
 import FoxModule from "./FoxWeb/sources/JS/FoxWeb.js" // Module 
@@ -25,52 +17,20 @@ import FoxModule from "./FoxWeb/sources/JS/FoxWeb.js" // Module
 const FoxModule = require("./FoxWeb/sources/JS/FoxWeb.js"); // CommonJS
 ...
 ```
+
+<a href="https://github.com/jefferson-developer-it/FoxWeb">
+Para usar no Deno ou Navegador
+</a>
+
 ## Entendendo a FoxWeb
 
 ### Retorna objetos
 
 | Nome | Descrição |
 |------|-------------|
-| DOM |Objeto que contém métodos para obtenção de elementos dom.|
 |$VerifyTypes|Objeto com verificador de tipo|
 |$Math|Use a biblioteca de matemática com mais facilidade|
 |$Utils|Facilite algumas tarefas|
-
-## DOM
-> Funciona apenas no navegador.
-
-| Chaves | Descrição |
-|------|----------------|
-|$|Transforme um elemento DOM em um DOMFOX.|
-|$Fox|Obter um objeto DOM|
-|$Foxes|Obter muitos objetos DOM|
-|$Create|Criar um objeto DOM|
-
-* Transforme o elemento DOM em DOM FOX
-```
-import FoxModule from "./FoxWeb/sources/JS/FoxWeb.js";
-const {DOM} = FoxModule;
-const meuElemento = document.getElementById("meu-elemento");
-
-const meuFoxElement = DOM.$(meuElemento);
-```
-
-
-* Obtenha um DOM FOX
-```
-const meuFoxElement = DOM.$Fox("#meu-elemento");
-```
-* Crie um DOM FOX
-```
-const myFoxElement = DOM.$Create("div", {
-    id: "exemplo-criar",
-    class: ["cartão", "Olá"],
-    pena: myFoxElement
-});
-// DOM.$Create(tagname, settings_initial?);
-// Todo o valor de settings_initial é opcional
-```
-
 
 ## $VerifyTypes
 
@@ -91,7 +51,7 @@ console.log($VerifyTypes.IsArray(linguagens)) // true
 console.log($VerifyTypes.IsArray(minhaFavLang)) // false
 ```
 
-* ÉNum
+* isNum
 
 ```
 const {IsNum} = $VerifyTypes;

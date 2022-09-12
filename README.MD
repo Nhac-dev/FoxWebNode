@@ -1,32 +1,26 @@
 # Fox Web - A JavaScript Shortener
 
-## Which is?
+## What is?
 
 FoxWeb is a JS script that aims to make JS easier. It can be used on both frontend and backend.
 
-- On Browser
-```
-<script type="module">
-    import FoxModule from "https://cdn.jsdelivr.net/gh/Nhac-dev/FoxWeb@latest/sources/JS/FoxWeb.js"
-
-    ...
-</script>
-```
-
-- On NodeJs
+- NodeJs
 ```
 $ npm i foxweb-node
-``` 
-
-* * On index.js 
-
 ```
-import FoxModule from "./FoxWeb/sources/JS/FoxWeb.js" // Module 
-// Or
-const FoxModule = require("./FoxWeb/sources/JS/FoxWeb.js");
 
+
+* * index.js file
+```
+import FoxModule from "./FoxWeb/sources/JS/FoxWeb.js" // Module
+// Or
+const FoxModule = require("./FoxWeb/sources/JS/FoxWeb.js"); // CommonJS
 ...
 ```
+
+<a href="https://github.com/jefferson-developer-it/FoxWeb">
+To use in Deno or Browser
+</a>
 
 ## Understanding FoxWeb
 
@@ -34,67 +28,30 @@ const FoxModule = require("./FoxWeb/sources/JS/FoxWeb.js");
 
 | Name | Description |
 |------|-------------|
-| DOM  |Object that contains methods for obtaining dom Elements.|
 |$VerifyTypes|Object with type checker|
-|$Math|Use the Math Library Easier|
-|$Utils|Make it easy to do some tasks|
-
-## DOM 
-> Work only in browser.
-
-| Children | Description |
-|------|----------------|
-|$|Transform a DOM element into a DOMFOX.|
-|$Fox|Get a DOM object|
-|$Foxes|Get many DOM object|
-|$Create|Create a Object DOM|
-
-* Transform legacy in DOM FOX
-```
-import FoxModule from "./FoxWeb/sources/JS/FoxWeb.js";
-const {DOM} = FoxModule;
-const myElement = document.getElementById("my-element");
-
-const myFoxElement = DOM.$(myElement);
-```
-
-
-* Get a DOM FOX
-```
-const myFoxElement = DOM.$Fox("#my-element");
-```
-* Create a DOM FOX
-```
-const myFoxElement = DOM.$Create("div", {
-    id: "example-create",
-    class: ["card", "Hello"],
-    feather: myFoxElement 
-});
-// DOM.$Create(tagname, settings_initial?);
-// All Value of settings_initial is optional
-```
-
+|$Math|Use the math library more easily|
+|$Utils|Make some tasks easier|
 
 ## $VerifyTypes
 
 
-| Children | Description |
+| Keys | Description |
 |------|----------------|
-|IsArray|Verify if value is a array|
-|IsNum|Verify if value is a number|
-|IsObj|Verify if value is a object|
+|IsArray|Check if the value is an array|
+|IsNum|Check if the value is a number|
+|IsObj|Check if value is an object|
 
-* IsArray
+* isArray
 
 ```
-const languages = ["JS", "Go", "Rust"];
+const languages ​​= ["JS", "Go", "Rust"];
 const myFavLang = languages[1]; // Go
 
 console.log($VerifyTypes.IsArray(languages)) // true
 console.log($VerifyTypes.IsArray(myFavLang)) // false
 ```
 
-* IsNum
+* isNum
 
 ```
 const {IsNum} = $VerifyTypes;
@@ -104,16 +61,16 @@ const num3 = "20"
 
 console.log(IsNum(num1), IsNum(num2), IsNum(num3))
 // output: true, false, true
-// Even though it's a string it should return true if it's a number
+// Even though it's a string, it should return true if it's a number
 ```
 
-* IsObject
+* isObject
 ```
 const foxInfo = {
-    author: "Jefferson",
+    Author: "Jefferson",
     packageName: "FoxWeb"
 };
-const languages = ["JS", "Go", "Rust"];
+const languages ​​= ["JS", "Go", "Rust"];
  
 console.log(IsObj(foxInfo), IsObj(languages))
 
@@ -124,14 +81,14 @@ console.log(IsObj(foxInfo), IsObj(languages))
 ## $Math
 
 
-| Children | Description |
+| Keys | Description |
 |------|----------------|
-|RoundNum|Logical Round Num|
-|RoundNumUp|Round num to up 5.4 > 6|
-|RoundNumDown|Round num to down 5.5 > 5|
-|GenRandom|Gen a random num|
+|RoundNum|Logical round number|
+|RoundNumUp|Rounds the number up 5,4 > 6|
+|RoundNumDown|Rounds the number down 5.5 > 5|
+|GenRandom|Generate a random number|
 
-* Examples RoundNum
+* RoundNum Examples
 ```
 const n1 = 5.5
 const n2 = 5.4
@@ -139,7 +96,7 @@ const n2 = 5.4
 console.log(
     RoundNum(n1), // 6
     RoundNum(n2), // 5
-    RoundNumUp(n1), // 6 
+    RoundNumUp(n1), // 6
     RoundNumUp(n2), // 6
     RoundNumDown(n1), // 5
     RoundNumDown(n2), // 5
@@ -156,19 +113,19 @@ console.log(randomNum);
 
 ## $Utils
 
-| Children | Description |
+| Keys | Description |
 |------|----------------|
-|FindAllIndex|Find all index of a value in Array/string|
+|FindAllIndex|Find all indexes of a value in Array/string|
 |GenRandomText|Gen random string|
 |MaskText|Mask a text|
 
 * FindAllIndex
 ```
-const languages = ["JS", "Go", "Rust", "JS"];
-const languages_str = "JS, Go, Rust";
+const languages ​​= ["JS", "Go", "Rust", "JS"];
+const language_str = "JS, Go, Rust";
 
-console.log(FindAllIndex(languages, "JS")); // [0, 3] 
-console.log(FindAllIndex(languages_str, "S")); // [1, 10] 
+console.log(FindAllIndex(languages, "JS")); // [0, 3]
+console.log(FindAllIndex(languages_str, "S")); // [1, 10]
 
 // FindAllIndex(arr, item)
 ```
@@ -177,16 +134,16 @@ console.log(FindAllIndex(languages_str, "S")); // [1, 10]
 ```
 const text = GenRandomText(10);
 const text_mask = GenRandomText(10, {
-    noUpChar: true, //The text will not have uppercase letters
-    noLowerChar: true, //The text will not have lowercase letters
-    noSpecial: true, //The text will not have special char
+    noUpChar: true, //Text will not be capitalized
+    noLowerChar: true, //Text will not be lowercase
+    noSpecial: true, //Text will have no special character
     templateMask: "##.##-#(#####)"
 });
 const text_mask2 = GenRandomText(10, {
-    noNum: true, // The text will no have numbers
+    noNum: true, // Text will not have numbers
     firstChar: "r", // The first letter must be "r"
     templateMask: "###.##-#(#####)"
-}); // Error: The template does not match the amount of index of the text
+}); // Error: Template does not match text index amount
 
 // No console.log because all text is random
 ```
@@ -194,7 +151,7 @@ const text_mask2 = GenRandomText(10, {
 * MaskText
 
 ```
-const phone_number = "5500000000000"
+const phone_number = "55000000000000"
 const masked = MaskText(phone_number, "+## (##) #####-####)";
 
 console.log(masked); // +55 (00) 00000-0000
@@ -205,21 +162,19 @@ console.log(masked); // +55 (00) 00000-0000
 ___
 ## Modifications in Native JS
 
-### In Number constructor
-- Add Method format(x) - This method change 1 to "01", "001".
-- Add Iterator
+### In the number constructor
+- Added format(x) method - This method changes from 1 to "01", "001".
+- Added iterator;
 ```
 console.log(10..format("3")); // 010
-console.log([...3], [...-2]); // [0, 1, 2, 3], [0, -1, -2]
+consolee.log([...3], [...-2]); // [0, 1, 2, 3], [0, -1, -2]
 ```
-### In Object constructor
-- Method toString now return JSON string
-- Add Method values, the returns all values of Object 
-- Add Method keys, the returns all keys of Object 
-### In String constructor
-- Add Method toObject, her return a object or null
-- Add Method toNum (convert the string to num)
-- Add Method toInt (convert the string to int num)
-- Add Method toFloat(fractionsDigits) (convert the string to float string(yes to string, example: "1"..ToFloat(2) -> "1.00", "1.234"..toFloat(2) -> "1.23"))
-
-
+### In object constructor
+- The toString method now returns the JSON string
+- Add Method values, returns all Object values
+- Add method keys, returns all object keys
+### In the String constructor
+- Add Method toObject, it returns an object or null
+- Added toNum method (convert string to num)
+- Added toInt method (convert string to int num)
+- Added method toFloat(fractionsDigits) (convert string to float string (yes to string, example: "1"..ToFloat(2) -> "1.00", "1.234"..toFloat(2) -> "1.23" ))
