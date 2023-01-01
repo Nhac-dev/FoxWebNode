@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.$Create = exports.$Foxes = exports.$ = exports.$Fox = void 0;
+exports.$Create = exports.$FoxesGet = exports.$ = exports.$FoxGet = void 0;
 const FoxElm_js_1 = require("../class/FoxElm.js");
 const FoxesGet_js_1 = require("../class/FoxesGet.js");
 const FoxGet_js_1 = require("../class/FoxGet.js");
@@ -20,10 +20,10 @@ const FoxGet_js_1 = require("../class/FoxGet.js");
  * @param {string} query
  * @returns
  */
-function $Fox(query) {
+function $FoxGet(query) {
     return new FoxGet_js_1.$Fox(query);
 }
-exports.$Fox = $Fox;
+exports.$FoxGet = $FoxGet;
 /**
  *
  * @param {FoxElement} legacyElement
@@ -38,10 +38,10 @@ exports.$ = $;
  * @param {string} query
  * @returns
  */
-function $Foxes(query) {
+function $FoxesGet(query) {
     return new FoxesGet_js_1.$Foxes(query);
 }
-exports.$Foxes = $Foxes;
+exports.$FoxesGet = $FoxesGet;
 /**
  *
  * @param {string} tagName

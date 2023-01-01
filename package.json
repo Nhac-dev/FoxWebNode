@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/jefferson-developer-it/FoxWebNode/issues"
   },
-  "homepage": "https://github.com/jefferson-developer-it/FoxWebNode#readme"
+  "homepage": "https://github.com/jefferson-developer-it/FoxWebNode#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  },
+  "dependencies": {
+    "xhr2": "^0.2.1"
+  }
 }

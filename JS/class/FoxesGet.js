@@ -14,6 +14,7 @@ const FoxElm_js_1 = require("./FoxElm.js");
  *
 */
 class $Foxes {
+    elms;
     /**
      * @param {string} query
      */
